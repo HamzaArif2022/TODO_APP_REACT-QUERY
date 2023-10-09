@@ -9,17 +9,17 @@ function LayoutTodo() {
     return (
         <BrowserRouter>
             <>
-                <ul className="nav">
-                    <li className="nav-item">
+                <ul className="navbar navbar-expand-lg navbar-light bg-light">
+                    <li className="navbar-nav mr-auto">
                         <Link to={"/"}>
                             <a className="nav-link active" href="#">List</a>
                         </Link>
                     </li>
-                    <li className="nav-item">
+                    <li className="navbar-nav mr-auto">
 
-                        <Link to={"/create"}>
-                            <a className="nav-link active" href="#">Create</a>
-                        </Link>
+                       {/*  <Link to={"/create"}>
+                            <a className="nav-link " href="#">Create</a>
+                        </Link> */}
                     </li>
 
                 </ul>

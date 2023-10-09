@@ -26,8 +26,7 @@ export default function List() {
   const DeleteMutation = useMutation((id) => {
     return APi.delete(id)
   }, {
-    onSuccess: (data, variables, context) => {
-
+    onSuccess: (data, variables, context) => {  
       queryClient.removeQueries(["todo", variables])// variables return the id value 
       queryClient.invalidateQueries("todos")
     },// variables return the id value 
@@ -44,12 +43,12 @@ export default function List() {
   return (
 
     <div className='container p-3'>
+      {new Date(dataUpdatedAt).toTimeString()}
+      <button className='btn btn-info mx-3 my-3' disabled={isFetching} onClick={refetch}>refetch</button>
       <Add />
       {isError && <alert className="alert alert-danger container" >{Error}</alert>}
       {!isError &&
-        (<div>
-          {new Date(dataUpdatedAt).toTimeString()}
-          <button className='btn btn-info' disabled={isFetching} onClick={refetch}>refetch</button>
+        (<div className='my-3'>
           <table class="table table-border">
             <thead>
               <tr>
@@ -72,7 +71,7 @@ export default function List() {
                       Delete
                     </button>
                     <Link to={'/update/' + todo.id}>
-                      <button className='btn btn-success'>Update</button>
+                      <button className='btn mx-1 btn-success'>Update</button>
                     </Link>
                     <Link to={'/details/' + todo.id}>
                       <button className='btn btn-primary'>deatils</button>
