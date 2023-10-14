@@ -27,8 +27,9 @@ export default function List() {
     return APi.delete(id)
   }, {
     onSuccess: (data, variables, context) => {  
-      queryClient.removeQueries(["todo", variables])// variables return the id value 
-      queryClient.invalidateQueries("todos")
+      // variables return the id value 
+      queryClient.removeQueries(["todo", variables])// invalidate the details cach 
+      queryClient.invalidateQueries("todos")// invalidate the whole  cach 
     },// variables return the id value 
 
     //when successfull deleted todo item oui invalidate the cach to be return the new cach 

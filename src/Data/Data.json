@@ -1,9 +1,19 @@
 {
   "todos": [
     {
-      "title": "motivation be like",
+      "title": "js",
       "completed": true,
       "id": 1
+    },
+    {
+      "title": "react",
+      "completed": true,
+      "id": 2
+    },
+    {
+      "title": "php",
+      "completed": false,
+      "id": 3
     }
   ]
 }

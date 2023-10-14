@@ -9,7 +9,7 @@ export default function Add() {
         return  APi.Add(todo)
     },{
         onSuccess: (data,variables,context)=>{
-            // when the data added succesfully we must invalidate the cach to make call to the new data 
+            // when the data added succesfully we must invalidate the cach to render  the new data 
             
             queryClient.invalidateQueries("todos")
         }
